@@ -1,0 +1,14 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetB,SetC,SetA,SetD,SetE,index_changed,sum_sets
+25,4837,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,44782745,Acute deep venous thrombosis of thigh,S,V,132271000119105,SNOMED,1,1,1,1,1,True,5
+7,2937,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,762021,Acute deep venous thrombosis of popliteal vein of left leg,S,V,285571000119108,SNOMED,1,1,1,1,1,True,5
+20,3303,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,37109253,Bilateral acute deep vein thrombosis of femoral veins,S,V,285381000119104,SNOMED,1,1,1,1,1,True,5
+16,6255,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,765541,Acute deep venous thrombosis of ileofemoral vein of right lower extremity,S,V,285461000119103,SNOMED,1,1,1,1,1,True,5
+26,4898,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,44782747,Acute deep venous thrombosis of femoral vein,S,V,132291000119106,SNOMED,1,1,1,1,1,True,5
+6,3407,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,762020,Acute deep venous thrombosis of bilateral popliteal veins,S,V,285561000119102,SNOMED,1,1,1,1,1,True,5
+13,2056,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,765155,Acute deep venous thrombosis of bilateral ileofemoral veins,S,V,285441000119102,SNOMED,1,1,1,1,1,True,5
+23,2746,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,44782743,Acute deep venous thrombosis of popliteal vein,S,V,132251000119101,SNOMED,1,1,1,1,1,True,5
+5,1676,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,762015,Acute deep venous thrombosis of ileofemoral vein of left leg,S,V,285451000119100,SNOMED,1,1,1,1,1,True,5
+4,8137,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,762013,Acute deep venous thrombosis of right femoral vein,S,V,285401000119104,SNOMED,1,1,1,1,1,True,5
+8,2745,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,762022,Acute deep venous thrombosis of popliteal vein of right leg,S,V,285581000119106,SNOMED,1,1,1,1,1,True,5
+15,1582,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,765540,Acute deep venous thrombosis of left femoral vein,S,V,285391000119101,SNOMED,1,1,1,1,1,True,5
+22,4522,C04_DeepVeinThrombosis,[C04][AI4] Deep Vein Thrombosis,43531681,Acute deep vein thrombosis of lower limb,S,V,651000119108,SNOMED,1,1,1,1,1,True,5

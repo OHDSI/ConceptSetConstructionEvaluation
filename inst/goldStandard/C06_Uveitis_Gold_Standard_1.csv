@@ -1,0 +1,19 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetD,SetC,SetE,SetB,SetA,index_changed,sum_sets
+145,4677,C06_Uveitis,[C06][AI2] Uveitis,36676800,Idiopathic posterior uveitis,S,V,773991005,SNOMED,1,1,1,1,1,True,5
+77,1080,C06_Uveitis,[C06][AI2] Uveitis,3655801,Non-infectious posterior uveitis,S,V,870199008,SNOMED,1,1,1,1,1,True,5
+8,2745,C06_Uveitis,[C06][AI2] Uveitis,434638,Paramacular focal retinitis AND retinochoroiditis,S,V,42031001,SNOMED,1,1,1,1,1,True,5
+126,9942,C06_Uveitis,[C06][AI2] Uveitis,4214659,Multifocal choroiditis,S,V,414783007,SNOMED,1,1,1,1,1,True,5
+112,1088,C06_Uveitis,[C06][AI2] Uveitis,4183040,Posterior uveitis,S,V,43363007,SNOMED,1,1,1,1,1,True,5
+60,2730,C06_Uveitis,[C06][AI2] Uveitis,1246308,Left juxtapapillary focal chorioretinitis,S,V,340241000119106,SNOMED,1,1,1,1,1,True,5
+67,4019,C06_Uveitis,[C06][AI2] Uveitis,1246366,Bilateral juxtapapillary focal chorioretinitis,S,V,345601000119100,SNOMED,1,1,1,1,1,True,5
+169,5694,C06_Uveitis,[C06][AI2] Uveitis,37171370,Bilateral macular focal chorioretinitis,S,V,345251000119104,SNOMED,1,1,1,1,1,True,5
+114,2603,C06_Uveitis,[C06][AI2] Uveitis,4194295,Serpiginous choroiditis,S,V,312491004,SNOMED,1,1,1,1,1,True,5
+186,5331,C06_Uveitis,[C06][AI2] Uveitis,45757706,Macular focal choroiditis,S,V,336911000119104,SNOMED,1,1,1,1,1,True,5
+168,8087,C06_Uveitis,[C06][AI2] Uveitis,37171369,Bilateral macular focal choroiditis,S,V,345241000119101,SNOMED,1,1,1,1,1,True,5
+139,2656,C06_Uveitis,[C06][AI2] Uveitis,4334133,Birdshot chorioretinitis,S,V,231981005,SNOMED,1,1,1,1,1,True,5
+124,7511,C06_Uveitis,[C06][AI2] Uveitis,4212319,Multifocal choroiditis and panuveitis syndrome,S,V,414784001,SNOMED,1,1,1,1,1,True,5
+15,1582,C06_Uveitis,[C06][AI2] Uveitis,438744,Acute posterior multifocal placoid pigment epitheliopathy,S,V,89188001,SNOMED,1,1,1,1,1,True,5
+53,3592,C06_Uveitis,[C06][AI2] Uveitis,1246270,Right juxtapapillary focal chorioretinitis,S,V,334641000119103,SNOMED,1,1,1,1,1,True,5
+122,2649,C06_Uveitis,[C06][AI2] Uveitis,4210135,Punctate inner choroidopathy,S,V,312950007,SNOMED,1,1,1,1,1,True,5
+107,1321,C06_Uveitis,[C06][AI2] Uveitis,4109407,Peripheral focal retinochoroiditis,S,V,193438006,SNOMED,1,1,1,1,1,True,5
+103,8942,C06_Uveitis,[C06][AI2] Uveitis,4102047,Juxtapapillary focal chorioretinitis,S,V,193436005,SNOMED,1,1,1,1,1,True,5

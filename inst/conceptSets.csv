@@ -1,0 +1,7 @@
+﻿id,name,goldStandardAdjudicatedFile,goldStandardIntersectionFile,definitionFile,closestConceptId,closestConceptName
+C01,Systemic Lupus Erythematosus,C01_SLE_for_adjudication.xlsx,C01_SLE_Gold_Standard_1.csv,SLE.md,257628,Systemic lupus erythematosus
+C02,Rheumatoid Arthritis,C02_RheumatoidArthritis_for_adjudication.xlsx,C02_RheumatoidArthritis_Gold_Standard_1.csv,RA.md,80809,Rheumatoid arthritis
+C03,Diabetic Macular Edema,C03_DiabetesMacularEdema_for_adjudication.xlsx,C03_DiabetesMacularEdema_Gold_Standard_1.csv,DME.md,380097,Macular edema due to diabetes mellitus
+C04,Deep-Vein Thrombosis,C04_DeepVeinThrombosis_for_adjudication.xlsx,C04_DeepVeinThrombosis_Gold_Standard_1.csv,DVT.md,4133004,Deep venous thrombosis
+C06,Posterior Uveitis,C06_Uveitis_for_adjudication.xlsx,C06_Uveitis_Gold_Standard_1.csv,PU.md,4183040,Posterior uveitis
+C07,Systemic Sclerosis,C07_SystemicSclerosis_for_adjudication.xlsx,C07_SystemicSclerosis_Gold_Standard_1.csv,SS.md,134442,Systemic sclerosis

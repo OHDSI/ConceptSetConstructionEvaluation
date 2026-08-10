@@ -1,0 +1,27 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetD,SetC,SetA,SetB,index_changed,sum_sets
+118,5739,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4243509,Rheumatoid scleritis,S,V,59165007,SNOMED,1,1,1,1,True,4
+112,1088,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4162539,Rheumatoid arthritis with pneumoconiosis,S,V,398640008,SNOMED,1,1,1,1,True,4
+168,8087,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160421,Felty syndrome with seronegative rheumatoid arthritis,S,V,1162364006,SNOMED,1,1,1,1,True,4
+159,2090,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37108714,Seropositive rheumatoid arthritis of multiple joints,S,V,11055151000119108,SNOMED,1,1,1,1,True,4
+165,7014,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160390,Rheumatoid factor and anti-citrullinated protein antibody positive erosive rheumatoid arthritis,S,V,1162319009,SNOMED,1,1,1,1,True,4
+29,4460,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,603309,Seropositive rheumatoid arthritis in remission,S,V,16606721000119107,SNOMED,1,1,1,1,True,4
+83,6023,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4103516,Rheumatoid carditis,S,V,28880005,SNOMED,1,1,1,1,True,4
+121,8838,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4271003,Rheumatoid vasculitis,S,V,400054000,SNOMED,1,1,1,1,True,4
+77,1080,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4035611,Seropositive rheumatoid arthritis,S,V,239791005,SNOMED,1,1,1,1,True,4
+160,2156,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37117421,Rheumatoid arthritis in remission,S,V,143441000119108,SNOMED,1,1,1,1,True,4
+119,2670,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4269880,Rheumatoid arteritis,S,V,399923009,SNOMED,1,1,1,1,True,4
+28,7383,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,603308,Seronegative rheumatoid arthritis in remission,S,V,16606681000119101,SNOMED,1,1,1,1,True,4
+33,7811,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,607145,Systemic rheumatoid vasculitis,S,V,1149219001,SNOMED,1,1,1,1,True,4
+1,4688,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,80809,Rheumatoid arthritis,S,V,69896004,SNOMED,1,1,1,1,True,4
+163,2263,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160376,Seronegative erosive rheumatoid arthritis,S,V,1162303002,SNOMED,1,1,1,1,True,4
+164,9519,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160384,Rheumatoid factor and anti-citrullinated protein antibody positive rheumatoid arthritis,S,V,1162313005,SNOMED,1,1,1,1,True,4
+169,5694,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160562,Rheumatoid arthritis with rheumatoid lung disease,S,V,1162677006,SNOMED,1,1,1,1,True,4
+81,3997,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4083556,Seronegative rheumatoid arthritis,S,V,239792003,SNOMED,1,1,1,1,True,4
+111,7345,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4147418,Seropositive erosive rheumatoid arthritis,S,V,308143008,SNOMED,1,1,1,1,True,4
+167,8598,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37160417,Felty syndrome with seronegative erosive rheumatoid arthritis,S,V,1162362005,SNOMED,1,1,1,1,True,4
+135,9388,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4347065,Rheumatoid necrotizing vasculitis,S,V,239943002,SNOMED,1,1,1,1,True,4
+108,3083,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4117686,Rheumatoid arthritis of multiple joints,S,V,287006005,SNOMED,1,1,1,1,True,4
+175,6060,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,37207809,Seronegative rheumatoid arthritis of multiple joints,S,V,319081000119109,SNOMED,1,1,1,1,True,4
+130,2322,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4300202,Rheumatoid episcleritis,S,V,77522006,SNOMED,1,1,1,1,True,4
+2,6709,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,81097,Felty's syndrome,S,V,57160007,SNOMED,1,1,1,1,True,4
+131,1733,C02_RheumatoidArthritis,[C02][H1] Rheumatoid Arthritis,4306357,Rheumatoid aortitis,S,V,38877003,SNOMED,1,1,1,1,True,4

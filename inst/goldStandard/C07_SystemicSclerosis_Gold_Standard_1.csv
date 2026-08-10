@@ -1,0 +1,15 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetA,SetD,SetC,SetB,SetE,index_changed,sum_sets
+25,4837,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,37119141,Pediatric onset systemic sclerosis,S,V,724603009,SNOMED,1,1,1,1,1,True,5
+4,8137,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4027230,Systemic sclerosis sine scleroderma,S,V,128461001,SNOMED,1,1,1,1,1,True,5
+31,5482,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,40485046,Progressive systemic sclerosis,S,V,444133002,SNOMED,1,1,1,1,1,True,5
+9,8851,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4128222,Renal involvement in scleroderma,S,V,236502006,SNOMED,1,1,1,1,1,True,5
+5,1676,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4027727,"Systemic sclerosis, diffuse",S,V,128460000,SNOMED,1,1,1,1,1,True,5
+12,3183,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4185187,Systemic sclerosis with limited cutaneous involvement,S,V,298285004,SNOMED,1,1,1,1,1,True,5
+1,4688,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,134442,Systemic sclerosis,S,V,89155008,SNOMED,1,1,1,1,1,True,5
+28,7383,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,37397763,Glomerulonephritis co-occurrent and due to scleroderma,S,V,89681000119101,SNOMED,1,1,1,1,1,True,5
+6,3407,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4103019,Limited systemic sclerosis,S,V,299276009,SNOMED,1,1,1,1,1,True,5
+2,6709,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,255304,Lung disease with systemic sclerosis,S,V,196133001,SNOMED,1,1,1,1,1,True,5
+3,3954,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,606390,Diffuse systemic sclerosis of childhood,S,V,1144925008,SNOMED,1,1,1,1,1,True,5
+24,6696,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4337524,Pericarditis secondary to scleroderma,S,V,87442008,SNOMED,1,1,1,1,1,True,5
+8,2745,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,4126439,Acute scleroderma renal crisis,S,V,236503001,SNOMED,1,1,1,1,1,True,5
+29,4460,C07_SystemicSclerosis,[C07][AI3] Systemic Sclerosis,37399445,Reynolds syndrome,S,V,715401008,SNOMED,1,1,1,1,1,True,5

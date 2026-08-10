@@ -1,0 +1,25 @@
+Package: ConceptSetConstructionEvaluation
+Type: Package
+Title: Evaluating Concept Set Contructors
+Version: 0.0.1
+Date: 2026-08-10
+Authors@R: c(
+    person("Martijn", "Schuemie", email = "schuemie@ohdsi.org", role = c("aut", "cre")),
+    person("Azza", "Shoaibi", role = c("aut"))
+  )
+Description: Evaluating concept set contructors using the gold standard established during the first MindsMeetMachines
+  challenge.
+Depends:
+    R (>= 4.0.0)
+Imports:
+    dplyr,
+    openxlsx,
+    checkmate
+Suggests:
+    testthat,
+License: Apache License
+URL: https://ohdsi.github.io/DatabaseConnector/, https://github.com/OHDSI/DatabaseConnector
+BugReports: https://github.com/OHDSI/DatabaseConnector/issues
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
+Config/roxygen2/version: 8.0.0

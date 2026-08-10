@@ -1,0 +1,15 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetD,SetB,SetC,SetE,SetA,index_changed,sum_sets
+5,1676,C01_SLE,[C01][AI1] SLE,4124539,Lupus pneumonitis,S,V,233730002,SNOMED,1,1,1,1,1,True,5
+12,3183,C01_SLE,[C01][AI1] SLE,4295179,Acute systemic lupus erythematosus,S,V,403486000,SNOMED,1,1,1,1,1,True,5
+1,4688,C01_SLE,[C01][AI1] SLE,257628,Systemic lupus erythematosus,S,V,55464009,SNOMED,1,1,1,1,1,True,5
+19,5067,C01_SLE,[C01][AI1] SLE,36676444,Autosomal systemic lupus erythematosus,S,V,773333003,SNOMED,1,1,1,1,1,True,5
+13,2056,C01_SLE,[C01][AI1] SLE,4296502,Fulminating systemic lupus erythematosus,S,V,403487009,SNOMED,1,1,1,1,1,True,5
+16,6255,C01_SLE,[C01][AI1] SLE,4344158,Systemic lupus erythematosus with organ/system involvement,S,V,239887007,SNOMED,1,1,1,1,1,True,5
+17,6397,C01_SLE,[C01][AI1] SLE,4344400,Systemic lupus erythematosus with multisystem involvement,S,V,239890001,SNOMED,1,1,1,1,1,True,5
+20,3303,C01_SLE,[C01][AI1] SLE,37110517,Demyelination of central nervous system co-occurrent and due to systemic lupus erythematosus,S,V,724781003,SNOMED,1,1,1,1,1,True,5
+4,8137,C01_SLE,[C01][AI1] SLE,4101469,Pericarditis secondary to systemic lupus erythematosus,S,V,25380002,SNOMED,1,1,1,1,1,True,5
+2,6709,C01_SLE,[C01][AI1] SLE,4055640,Lung disease with systemic lupus erythematosus,S,V,196138005,SNOMED,1,1,1,1,1,True,5
+22,4522,C01_SLE,[C01][AI1] SLE,46270384,Nephropathy co-occurrent and due to systemic lupus erythematosus,S,V,295101000119105,SNOMED,1,1,1,1,1,True,5
+3,3954,C01_SLE,[C01][AI1] SLE,4057084,Lupus hepatitis,S,V,19682006,SNOMED,1,1,1,1,1,True,5
+21,1360,C01_SLE,[C01][AI1] SLE,37395585,Nephrotic syndrome co-occurrent and due to systemic lupus erythematosus,S,V,295111000119108,SNOMED,1,1,1,1,1,True,5
+15,1582,C01_SLE,[C01][AI1] SLE,4299106,Lupus disease of the lung,S,V,77753005,SNOMED,1,1,1,1,1,True,5

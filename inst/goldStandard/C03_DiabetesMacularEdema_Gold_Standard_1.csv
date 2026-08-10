@@ -1,0 +1,22 @@
+original_index,key,Disease,conceptSetName,conceptId,conceptName,standardConcept,invalidReason,conceptCode,vocabularyId,SetB,SetD,SetC,SetA,index_changed,sum_sets
+16,6255,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,4266042,High risk proliferative retinopathy with clinically significant macula edema due to diabetes mellitus,S,V,399874002,SNOMED,1,1,1,1,True,4
+20,3303,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626067,Macular edema of right eye due to diabetes mellitus,S,V,769217008,SNOMED,1,1,1,1,True,4
+27,2483,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,45770830,Macular edema and retinopathy due to type 2 diabetes mellitus,S,V,97331000119101,SNOMED,1,1,1,1,True,4
+9,8851,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,4162095,Macular edema not clinically significant due to diabetes mellitus,S,V,399864000,SNOMED,1,1,1,1,True,4
+25,4837,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626072,Clinically significant macular edema of left eye due to diabetes mellitus,S,V,769222008,SNOMED,1,1,1,1,True,4
+22,4522,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626069,Macular edema due to type 1 diabetes mellitus,S,V,769219006,SNOMED,1,1,1,1,True,4
+1,4688,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,380097,Macular edema due to diabetes mellitus,S,V,312912001,SNOMED,1,1,1,1,True,4
+5,1676,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,3655914,Cystoid macular edema due to diabetes mellitus,S,V,870421009,SNOMED,1,1,1,1,True,4
+17,6397,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,4269870,Non-high-risk proliferative retinopathy with clinically significant macular edema due to diabetes mellitus,S,V,399875001,SNOMED,1,1,1,1,True,4
+18,6229,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,4290822,Severe nonproliferative retinopathy with clinically significant macular edema due to diabetes mellitus,S,V,399872003,SNOMED,1,1,1,1,True,4
+6,3407,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,3655948,Persistent macular edema due to diabetes mellitus,S,V,870529009,SNOMED,1,1,1,1,True,4
+2,6709,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,1449982,Mild diabetic macular edema,S,V,1354552000,SNOMED,1,1,1,1,True,4
+3,3954,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,1449983,Moderate diabetic macular edema,S,V,1354553005,SNOMED,1,1,1,1,True,4
+4,8137,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,1449984,Severe diabetic macular edema,S,V,1354554004,SNOMED,1,1,1,1,True,4
+24,6696,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626071,Clinically significant macular edema of right eye due to diabetes mellitus,S,V,769221001,SNOMED,1,1,1,1,True,4
+23,2746,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626070,Macular edema due to type 2 diabetes mellitus,S,V,769220000,SNOMED,1,1,1,1,True,4
+19,5067,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,4290823,Very severe nonproliferative retinopathy with clinically significant macular edema due to diabetes mellitus,S,V,399877009,SNOMED,1,1,1,1,True,4
+26,4898,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626764,Clinically significant macular edema due to diabetes mellitus,S,V,770097006,SNOMED,1,1,1,1,True,4
+7,2937,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,3656194,Centrally involved macular edema due to diabetes mellitus,S,V,871778008,SNOMED,1,1,1,1,True,4
+21,1360,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,35626068,Macular edema of left eye due to diabetes mellitus,S,V,769218003,SNOMED,1,1,1,1,True,4
+8,2745,C03_DiabetesMacularEdema,[C03][AI1] Diabetes Macular Edema,3656195,Non centrally involved macular edema due to diabetes mellitus,S,V,871781003,SNOMED,1,1,1,1,True,4
