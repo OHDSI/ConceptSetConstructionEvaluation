@@ -57,7 +57,7 @@ evaluateConceptSets <- function(conceptSets) {
             paste(ids, collapse = ", "))
   }
   
-  conceptPrevalence <- read.csv(system.file("conceptRecordCounts.csv", package = "ConceptSetConstructionEvaluation"))
+  conceptPrevalence <- read.csv(system.file("ConceptRecordCounts.csv", package = "ConceptSetConstructionEvaluation"))
   
   results <- lapply(conceptSetOverview$id,
                     .evaluateGroup, 
