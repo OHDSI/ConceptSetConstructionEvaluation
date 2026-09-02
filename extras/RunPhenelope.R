@@ -4,23 +4,20 @@ library(dplyr)
 
 baseUrl <- "https://epi.jnj.com:8443/WebAPI"
 
-# Using  GPT-o3
-llmClient <- ellmer::chat_azure_openai(
+llmClientO3 <- ellmer::chat_azure_openai(
   endpoint = gsub("/openai/deployments.*", "", keyring::key_get("genai_o3_endpoint")),
   api_version = "2024-12-01-preview",
   model = "o3",
   credentials = function() keyring::key_get("genai_api_gpt4_key")
 )
-folder <- "e:/temp/phenelopeEval/o3"
 
-# Using GPT-4o
-# llmClient <- ellmer::chat_azure_openai(
-#   endpoint = gsub("/openai/deployments.*", "", keyring::key_get("genai_gpt4o_endpoint")),
-#   api_version = "2023-03-15-preview",
-#   model = "gpt-4o",
-#   credentials = function() keyring::key_get("genai_api_gpt4_key")
-# )
-# folder <- "e:/temp/phenelopeEval/4o"
+llmClient4o <- ellmer::chat_azure_openai(
+  endpoint = gsub("/openai/deployments.*", "", keyring::key_get("genai_gpt4o_endpoint")),
+  api_version = "2023-03-15-preview",
+  model = "gpt-4o",
+  credentials = function() keyring::key_get("genai_api_gpt4_key")
+)
+folder <- "e:/temp/phenelopeEval2"
 
 cdmDatabaseSchema <- "merative_ccae.cdm_merative_ccae_v3789"
 
@@ -44,9 +41,9 @@ for (i in seq_len(nrow(targets))) {
   if (!file.exists(fileName)) {
     message("Creating concept set for ", targetRow$name)
     conceptSet <- createConceptSet(conceptName = targetRow$name,
-                                   originalConceptList =targetRow$closestConceptId,
                                    additionalInformation = targetRow$definition,
-                                   llmClient = llmClient,
+                                   llmClientNonReasoning = llmClient4o,
+                                   llmClientReasoning = llmClientO3,
                                    connectionDetails = connectionDetails,
                                    cdmDatabaseSchema = cdmDatabaseSchema,
                                    outputDirectory = workFolder)
@@ -71,3 +68,5 @@ results$f1ConservativeWeighted[results$id == "Total"]
 # o3:
 # [1] 0.8318164
 
+# Latest version (4o + o3):
+# [1] 0.8044064
