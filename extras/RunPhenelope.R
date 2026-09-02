@@ -2,8 +2,6 @@ library(ConceptSetConstructionEvaluation)
 library(Phenelope)
 library(dplyr)
 
-baseUrl <- "https://epi.jnj.com:8443/WebAPI"
-
 llmClientO3 <- ellmer::chat_azure_openai(
   endpoint = gsub("/openai/deployments.*", "", keyring::key_get("genai_o3_endpoint")),
   api_version = "2024-12-01-preview",
