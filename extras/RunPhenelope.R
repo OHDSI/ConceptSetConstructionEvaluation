@@ -1,3 +1,6 @@
+# remove.packages("Phenelope")
+# remotes::install_github("ohdsi/Phenelope", ref = "develop")
+
 library(ConceptSetConstructionEvaluation)
 library(Phenelope)
 library(dplyr)
@@ -15,7 +18,7 @@ llmClient4o <- ellmer::chat_azure_openai(
   model = "gpt-4o",
   credentials = function() keyring::key_get("genai_api_gpt4_key")
 )
-folder <- "e:/temp/phenelopeEval2"
+folder <- "e:/temp/phenelopeEval3"
 
 cdmDatabaseSchema <- "merative_ccae.cdm_merative_ccae_v3789"
 
@@ -38,13 +41,22 @@ for (i in seq_len(nrow(targets))) {
   workFolder <- file.path(folder, sprintf("WorkFolder_%s", targetRow$id))
   if (!file.exists(fileName)) {
     message("Creating concept set for ", targetRow$name)
-    conceptSet <- createConceptSet(conceptName = targetRow$name,
-                                   additionalInformation = targetRow$definition,
+    llmClient <- llmClientO3
+    conceptSet <- createConceptSet(conceptSetTarget = targetRow$name,
+                                   originalConceptList = targetRow$closestConceptId,
+                                   clinicalDefinition = targetRow$definition,
                                    llmClientNonReasoning = llmClient4o,
                                    llmClientReasoning = llmClientO3,
                                    connectionDetails = connectionDetails,
                                    cdmDatabaseSchema = cdmDatabaseSchema,
                                    outputDirectory = workFolder)
+    # conceptSet <- createConceptSet(conceptName = targetRow$name,
+    #                                originalConceptList = targetRow$closestConceptId,
+    #                                additionalInformation = targetRow$definition,
+    #                                llmClient = llmClient4o,
+    #                                connectionDetails = connectionDetails,
+    #                                cdmDatabaseSchema = cdmDatabaseSchema,
+    #                                outputDirectory = workFolder)
     saveRDS(conceptSet, fileName)
   } else {
     conceptSet <- readRDS(fileName)
@@ -55,16 +67,30 @@ for (i in seq_len(nrow(targets))) {
     mutate(id = targetRow$id)
   
 }
+conceptSets <- lapply(conceptSets, function(x) {x$conceptId <- as.integer(x$conceptId); return(x)})
 conceptSets <- bind_rows(conceptSets)
 
 # Evaluate against gold standard ---------------------------------------------------------------------------------------
 results <- evaluateConceptSets(conceptSets)
 results$f1ConservativeWeighted[results$id == "Total"]
+
+# Phenelope 0.1.2 ------------------------------------
 # 4o:
 # [1] 0.865392
+
+# 4o rerun (no changes):
+# [1] 0.8267172
+
+# 4o rerun (no changes, morning Europe):
+# [1] 0.8431821 
 
 # o3:
 # [1] 0.8318164
 
-# Latest version (4o + o3):
+# Some August develop version -------------------------------------------------
+# 4o + o3:
 # [1] 0.8044064
+
+# Sep 3 develop version --------------------------------------------------------
+# 4o + o3:
+# [1] 0.8144267
