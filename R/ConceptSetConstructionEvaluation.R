@@ -19,6 +19,7 @@
 
 #' @import dplyr
 #' @importFrom utils read.csv
+#' @importFrom rlang .data
 NULL
 
 #' AI3 Concept Sets
