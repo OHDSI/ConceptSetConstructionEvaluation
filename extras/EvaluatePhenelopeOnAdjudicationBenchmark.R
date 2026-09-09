@@ -44,8 +44,8 @@ evaluateConceptAdjudication(adjudications)
 # All            220    24  1016    40 0.902       0.846       0.977
 
 # Using Other prompt ---------------------------------------------------------------
-prompt <- paste(readLines("extras/NewAdjudicationPrompt.txt"), collapse = "\n")
-systemPrompt <- "You are an expert medical doctor specializing in healthcare data analysis. Your primary function is to analyze healthcare data, including electronic health records, to infer causal relationships between exposures and health outcomes."
+prompt <- paste(readLines("extras/Adjudication.txt"), collapse = "\n")
+systemPrompt <- paste(readLines("extras/AdjudicationSystem.txt"), collapse = "\n")
 
 concepts <- getConceptsForAdjudication()
 
@@ -68,7 +68,6 @@ for (i in seq_along(groups)) {
     llmClient = llmClient
   )  
 }
-temp = adjudications
 adjudications <- bind_rows(adjudications) |>
   mutate(adjudication = if_else(status == "APPROVED", "YES", "NO"))
 
