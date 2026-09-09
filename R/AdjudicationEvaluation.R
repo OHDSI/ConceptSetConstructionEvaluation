@@ -76,9 +76,15 @@ evaluateConceptAdjudication <- function(concepts) {
   }
   checkmate::reportAssertions(collection = errorMessages)
 
-  goldStandard <- openxlsx::readWorkbook(system.file("goldStandard", 
-                                                     "ConceptAdjudicationGoldStandard.xlsx", 
-                                                     package = "ConceptSetConstructionEvaluation"))
+  # goldStandard <- openxlsx::readWorkbook(system.file("goldStandard", 
+  #                                                    "ConceptAdjudicationGoldStandard.xlsx", 
+  #                                                    package = "ConceptSetConstructionEvaluation"))
+  goldStandard <- readr::read_csv(system.file("goldStandard", 
+                                                     "ConceptAdjudicationGoldStandard.csv", 
+                                                     package = "ConceptSetConstructionEvaluation"),
+                                  show_col_types = FALSE)
+  
+  
   goldStandard <- goldStandard |>
     left_join(concepts |>
                 select("targetName", "conceptId", "adjudication"),
@@ -88,15 +94,27 @@ evaluateConceptAdjudication <- function(concepts) {
          "Please return the same rows as received from getConceptsForAdjudication().")
   }  
   # For now treating PROXY as positive:
-  performance <- goldStandard |>
+  confusion <- goldStandard |>
     mutate(tp = .data$adjudication == "YES" & .data$goldStandard != 'FALSE',
            fp = .data$adjudication == "YES" & .data$goldStandard == 'FALSE',
            tn = .data$adjudication == "NO" & .data$goldStandard == 'FALSE',
-           fn = .data$adjudication == "NO" & .data$goldStandard != 'FALSE') |>
+           fn = .data$adjudication == "NO" & .data$goldStandard != 'FALSE')
+  confusionByDomain <- confusion |>
+     group_by(.data$targetDomain) |>
+    summarise(tp = sum(.data$tp),
+              fp = sum(.data$fp),
+              tn = sum(.data$tn),
+              fn = sum(.data$fn)) 
+  confusionOverall <- confusion |>
     summarise(tp = sum(.data$tp),
               fp = sum(.data$fp),
               tn = sum(.data$tn),
               fn = sum(.data$fn)) |>
+    mutate(targetDomain = "All")
+  performance <- bind_rows(
+    confusionByDomain,
+    confusionOverall
+  ) |>
     mutate(ppv = .data$tp / (.data$tp + .data$fp),
            sensitivity = .data$tp / (.data$tp + .data$fn),
            specificity = .data$tn / (.data$tn + .data$fp))
