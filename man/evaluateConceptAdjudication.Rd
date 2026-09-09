@@ -7,7 +7,7 @@
 evaluateConceptAdjudication(concepts)
 }
 \arguments{
-\item{concepts}{The data frame returned by \code{getConceptsForAdjudication()} with an extra 'adjuction' column, having
+\item{concepts}{The data frame returned by \code{getConceptsForAdjudication()} with an extra 'adjudication' column, having
 value 'YES' if the concept should be included in a concept set for the target, or 'NO' otherwise.}
 }
 \value{

@@ -44,7 +44,7 @@ getConceptsForAdjudication <- function() {
 
 #' Evaluate concept adjudication
 #' 
-#' @param concepts The data frame returned by `getConceptsForAdjudication()` with an extra 'adjuction' column, having 
+#' @param concepts The data frame returned by `getConceptsForAdjudication()` with an extra 'adjudication' column, having 
 #'                 value 'YES' if the concept should be included in a concept set for the target, or 'NO' otherwise.
 #'
 #' @returns
@@ -87,11 +87,12 @@ evaluateConceptAdjudication <- function(concepts) {
     stop("Missing target - candidate concept combinations from the adjudications.",
          "Please return the same rows as received from getConceptsForAdjudication().")
   }  
+  # For now treating PROXY as positive:
   performance <- goldStandard |>
-    mutate(tp = .data$adjudication == "YES" & .data$goldStandard == 'TRUE',
-           fp = .data$adjudication == "YES" & .data$goldStandard != 'TRUE',
-           tn = .data$adjudication == "NO" & .data$goldStandard != 'TRUE',
-           fn = .data$adjudication == "NO" & .data$goldStandard == 'TRUE') |>
+    mutate(tp = .data$adjudication == "YES" & .data$goldStandard != 'FALSE',
+           fp = .data$adjudication == "YES" & .data$goldStandard == 'FALSE',
+           tn = .data$adjudication == "NO" & .data$goldStandard == 'FALSE',
+           fn = .data$adjudication == "NO" & .data$goldStandard != 'FALSE') |>
     summarise(tp = sum(.data$tp),
               fp = sum(.data$fp),
               tn = sum(.data$tn),
