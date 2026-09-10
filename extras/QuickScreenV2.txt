@@ -1,0 +1,31 @@
+Your task is to rapidly evaluate whether any of the Proposed Concepts are clearly NOT part of the Target Concept, %name%.
+
+-- Start of Clinical Definition
+%definition%
+--- End of Clinical Definition
+
+Be conservative: Only remove Proposed Concepts that CLEARY do not imply or are part of the Target Concept. When uncertain, keep the concept.
+
+If the Target Concept or its Clinical Definition explicitly exclude a Proposed Concept, remove it.
+
+Examples:
+- "Lower back pain" is clearly not a part of "Acute liver failure" (the vast majority of people with lower back pain will not have acute liver failure). 
+- "Pneumonia" is clearly not a part of "Systemic lupus erythematosus".
+= "Skin necrosis" is clearly not a part of "Rheumatoid arthritis".
+
+## Input
+
+Proposed concept(s): %concepts%
+
+Target Concept: %name%
+
+## Output structure
+NOTE: ONLY return the Proposed Concepts that are CLEARLY NOT part of the Target Concept
+Give a JSON-structured summary for the following (DO NOT ADD ANY OTHER NON-JSON FORMATTED TEXT):
+[
+  {
+    "conceptId": <Proposed Concept Id that is CLEARLY NOT part of the Target Concept, %name%>,
+    "suggestedConcept": "<Proposed Concept name>",
+    "rationale": "<rationale for why it is not part of the Target Concept>",
+  }
+]

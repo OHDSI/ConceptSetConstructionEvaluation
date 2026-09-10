@@ -35,7 +35,10 @@
 #' 
 #' @export
 getConceptsForAdjudication <- function() {
-  concepts <- openxlsx::readWorkbook(system.file("goldStandard", "ConceptAdjudicationGoldStandard.xlsx", package = "ConceptSetConstructionEvaluation"))
+  concepts <- readr::read_csv(system.file("goldStandard", 
+                                          "ConceptAdjudicationGoldStandard.csv", 
+                                          package = "ConceptSetConstructionEvaluation"),
+                              show_col_types = FALSE)
   concepts <- concepts |>
     as_tibble() |>
     select("targetName", "targetDefinition", "conceptId", "conceptName", "vocabularyId", "domainId", "conceptClassId")
@@ -75,13 +78,10 @@ evaluateConceptAdjudication <- function(concepts) {
     checkmate::assertSubset(concepts$adjudication, c("YES", "NO"))
   }
   checkmate::reportAssertions(collection = errorMessages)
-
-  # goldStandard <- openxlsx::readWorkbook(system.file("goldStandard", 
-  #                                                    "ConceptAdjudicationGoldStandard.xlsx", 
-  #                                                    package = "ConceptSetConstructionEvaluation"))
+  
   goldStandard <- readr::read_csv(system.file("goldStandard", 
-                                                     "ConceptAdjudicationGoldStandard.csv", 
-                                                     package = "ConceptSetConstructionEvaluation"),
+                                              "ConceptAdjudicationGoldStandard.csv", 
+                                              package = "ConceptSetConstructionEvaluation"),
                                   show_col_types = FALSE)
   
   
@@ -100,7 +100,7 @@ evaluateConceptAdjudication <- function(concepts) {
            tn = .data$adjudication == "NO" & .data$goldStandard == 'FALSE',
            fn = .data$adjudication == "NO" & .data$goldStandard != 'FALSE')
   confusionByDomain <- confusion |>
-     group_by(.data$targetDomain) |>
+    group_by(.data$targetDomain) |>
     summarise(tp = sum(.data$tp),
               fp = sum(.data$fp),
               tn = sum(.data$tn),
