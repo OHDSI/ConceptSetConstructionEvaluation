@@ -11,9 +11,9 @@ Evaluating concept set contructors using various gold standards.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://ohdsi.github.io/DatabaseConnector/}
-  \item \url{https://github.com/OHDSI/DatabaseConnector}
-  \item Report bugs at \url{https://github.com/OHDSI/DatabaseConnector/issues}
+  \item \url{https://ohdsi.github.io/ConceptSetConstructionEvaluation/}
+  \item \url{https://github.com/OHDSI/ConceptSetConstructionEvaluation}
+  \item Report bugs at \url{https://github.com/OHDSI/ConceptSetConstructionEvaluation/issues}
 }
 
 }

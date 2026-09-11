@@ -15,7 +15,8 @@ Imports:
     dplyr,
     openxlsx,
     checkmate,
-    rlang
+    rlang,
+    readr
 Suggests:
     testthat,
 License: Apache License
