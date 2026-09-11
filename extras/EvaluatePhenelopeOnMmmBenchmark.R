@@ -18,7 +18,7 @@ llmClient <- ellmer::chat_azure_openai(
 #   model = "gpt-4o",
 #   credentials = function() keyring::key_get("genai_api_gpt4_key")
 # )
-folder <- "e:/temp/phenelopeRefactorV1Prompts"
+folder <- "e:/temp/phenelopeRefactorV1PromptsTake2"
 
 cdmDatabaseSchema <- "merative_ccae.cdm_merative_ccae_v3789"
 
@@ -187,4 +187,13 @@ results$f1ConservativeWeighted[results$id == "Total"]
 # C07      22    10     7    12              10        67.1        19.7        7.03        40.7                    19.7     0.688  0.647                 0.688             0.773          0.622                         0.773 0.667          0.667      0.690
 # Total   418    56   282   167              69       982.         69.1      477.         329.                     69.1     0.858  0.740                 0.844             0.913          0.725                         0.905 0.794          0.788      0.809
 
-
+# V1 prompts second run:
+# [1] 0.8056284
+# id      tps   fps   tns   fns fpsConservative tpsWeighted fpsWeighted tnsWeighted fnsWeighted fpsConservativeWeighted precision recall precisionConservative precisionWeighted recallWeighted precisionConservativeWeighted    f1 f1Conservative f1Weighted
+# C01      43     3    54     8               3       111.          0         99.4         14.4                     0       0.935  0.843                 0.935             1              0.885                         1     0.887          0.887      0.939
+# C02     195     1     5     9               3       448.          0          0           20.2                     0       0.995  0.956                 0.985             1              0.957                         1     0.975          0.970      0.978
+# C03      27     0     0     7               0        81.7         0          0           28.4                     0       1      0.794                 1                 1              0.742                         1     0.885          0.885      0.852
+# C04      55    57    87     8              87       132.         78.1      168.          44.0                   113.      0.491  0.873                 0.387             0.629          0.751                         0.539 0.629          0.537      0.685
+# C06      84     0   114   115               0       155.          0        173.         169.                      0       1      0.422                 1                 1              0.478                         1     0.594          0.594      0.647
+# C07      22    10     7    12              10        67.1        19.7        7.03        40.7                    19.7     0.688  0.647                 0.688             0.773          0.622                         0.773 0.667          0.667      0.690
+# Total   426    71   267   159             103       995.         97.8      448.         317.                     97.8     0.851  0.756                 0.832             0.900          0.739                         0.885 0.801          0.792      0.812
