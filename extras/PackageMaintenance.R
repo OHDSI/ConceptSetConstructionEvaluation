@@ -25,7 +25,3 @@ unlink("extras/ConceptSetConstructionEvaluation.pdf")
 system("R CMD Rd2pdf ./ --output=extras/ConceptSetConstructionEvaluation.pdf")
 
 pkgdown::build_site()
-
-# Store JAR checksum -----------------------------------------------------------
-checksum <- rJava::J("org.ohdsi.databaseConnector.JarChecksum", "computeJarChecksum")
-write(checksum, file.path("inst", "csv", "jarChecksum.txt"))

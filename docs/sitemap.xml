@@ -2,10 +2,13 @@
 <url><loc>/404.html</loc></url>
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
-<url><loc>/reference/ConceptSetConstructionEvaluation-package.html</loc></url>
+<url><loc>/news/index.html</loc></url>
 <url><loc>/reference/ai3ConceptSets.html</loc></url>
+<url><loc>/reference/ConceptSetConstructionEvaluation-package.html</loc></url>
+<url><loc>/reference/evaluateConceptAdjudication.html</loc></url>
 <url><loc>/reference/evaluateConceptSets.html</loc></url>
 <url><loc>/reference/getConceptSetTargets.html</loc></url>
+<url><loc>/reference/getConceptsForAdjudication.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 </urlset>
 

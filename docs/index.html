@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Evaluating Concept Set Contructors">
-<meta property="og:description" content="Evaluating concept set contructors using the gold standard established during the first MindsMeetMachines challenge.">
+<meta property="og:description" content="Evaluating concept set contructors using various gold standards.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ConceptSetConstructionEvaluation</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
       </span>
     </div>
 
@@ -42,10 +42,13 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/OHDSI/DatabaseConnector/" class="external-link">
+  <a href="https://github.com/OHDSI/ConceptSetConstructionEvaluation/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
 
   </a>
@@ -72,22 +75,41 @@
 <h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h1>
 <p>This R package provides function for evaluating automated concept set constructors.</p>
+<p>Concept set construction is the task of creating an OHDSI concept set given a concept set name and possibly a description.</p>
 </div>
 <div class="section level1">
 <h1 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h1>
 <ul>
-<li>Uses the gold standard established during the first OHDSI MindsMeetMachines challenge.</li>
+<li>Uses the gold standard established during the first OHDSI MindsMeetMachines (MMM) challenge to evaluate the entire concept set construction pipeline.</li>
+<li>Provides a custom gold standard specificallty for the task of concept adjudiction: determining whether a concept belongs to a concept set, given the concept set name and description.</li>
 </ul>
 </div>
 <div class="section level1">
 <h1 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h1>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ai3ConceptSets</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Evaluating full concept construction using the MMM Challenge gold standard --------</span></span>
+<span></span>
+<span><span class="co"># Using MMM Challenge AI participant 3's submissions:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ai3ConceptSets</span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/evaluateConceptSets.html">evaluateConceptSets</a></span><span class="op">(</span><span class="va">ai3ConceptSets</span><span class="op">)</span></span>
 <span><span class="va">results</span><span class="op">$</span><span class="va">f1ConservativeWeighted</span><span class="op">[</span><span class="va">results</span><span class="op">$</span><span class="va">id</span> <span class="op">==</span> <span class="st">"Total"</span><span class="op">]</span></span>
-<span><span class="co"># [1] 0.8764369</span></span></code></pre></div>
+<span><span class="co"># [1] 0.8764369</span></span>
+<span></span>
+<span><span class="co"># Evaluating concept adjudication only ----------------------------------------------</span></span>
+<span><span class="va">concepts</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/getConceptsForAdjudication.html">getConceptsForAdjudication</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Using random adjudication for this example:</span></span>
+<span><span class="va">concepts</span><span class="op">$</span><span class="va">adjudication</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"YES"</span>, <span class="st">"NO"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">concepts</span><span class="op">)</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/evaluateConceptAdjudication.html">evaluateConceptAdjudication</a></span><span class="op">(</span><span class="va">concepts</span><span class="op">)</span></span>
+<span><span class="co">#   targetDomain    tp    fp    tn    fn   ppv sensitivity specificity</span></span>
+<span><span class="co"># 1 CONDITION       59   234   258    49 0.201       0.546       0.524</span></span>
+<span><span class="co"># 2 MEASUREMENT     38   116   117    29 0.247       0.567       0.502</span></span>
+<span><span class="co"># 3 PROCEDURE       54   155   160    31 0.258       0.635       0.508</span></span>
+<span><span class="co"># 4 All            151   505   535   109 0.230       0.581       0.514</span></span></code></pre></div>
 </div>
 <div class="section level1">
 <h1 id="technology">Technology<a class="anchor" aria-label="anchor" href="#technology"></a>
@@ -158,8 +180,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/OHDSI/DatabaseConnector/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/OHDSI/DatabaseConnector/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/OHDSI/ConceptSetConstructionEvaluation/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/OHDSI/ConceptSetConstructionEvaluation/issues" class="external-link">Report a bug</a></li>
 <li><a href="http://forums.ohdsi.org" class="external-link">Ask a question</a></li>
 </ul>
 </div>
@@ -184,6 +206,7 @@
 <ul class="list-unstyled">
 <li>Martijn Schuemie <br><small class="roles"> Author, maintainer </small>   </li>
 <li>Azza Shoaibi <br><small class="roles"> Author </small>   </li>
+<li>Patrick Ryan <br><small class="roles"> Author </small>   </li>
 </ul>
 </div>
 
@@ -195,12 +218,12 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Martijn Schuemie, Azza Shoaibi.</p>
+<p>Developed by Martijn Schuemie, Azza Shoaibi, Patrick Ryan.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer>

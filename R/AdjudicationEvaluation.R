@@ -50,6 +50,17 @@ getConceptsForAdjudication <- function() {
 #' @param concepts The data frame returned by `getConceptsForAdjudication()` with an extra 'adjudication' column, having 
 #'                 value 'YES' if the concept should be included in a concept set for the target, or 'NO' otherwise.
 #'
+#' @description
+#' The gold standard concists of 52 concept set targets. For each concept set target, A combination of vocabulary lookup
+#' and OHDSI's `Pheobe 2.0` tool were used to find possibly relevant concepts, of which 25 were randomly sampled. In 
+#' addition, LLMs were used to generate clinical definitions of each concept set target.
+#' 
+#' The 1,300 target-definition-concept triplets were manually reviewed to determine whether the concept should be part
+#' of the concept set according to the definition.
+#' 
+#' PPV, sensitivity, and specificity are computed overall, and stratified by concept set target domain.
+#' 
+#'
 #' @returns
 #' A data frame with performance statistics.
 #'

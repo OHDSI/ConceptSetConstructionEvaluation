@@ -18,7 +18,7 @@ llmClient <- ellmer::chat_azure_openai(
 #   model = "gpt-4o",
 #   credentials = function() keyring::key_get("genai_api_gpt4_key")
 # )
-folder <- "e:/temp/phenelopeRefactorCleanup"
+folder <- "e:/temp/phenelopeRefactorV1Prompts"
 
 cdmDatabaseSchema <- "merative_ccae.cdm_merative_ccae_v3789"
 
@@ -175,3 +175,16 @@ results$f1ConservativeWeighted[results$id == "Total"]
 
 # Code and prompt cleanup:
 # [1] 0.8104825
+
+# V1 prompts:
+# [1] 0.805273
+# id      tps   fps   tns   fns fpsConservative tpsWeighted fpsWeighted tnsWeighted fnsWeighted fpsConservativeWeighted precision recall precisionConservative precisionWeighted recallWeighted precisionConservativeWeighted    f1 f1Conservative f1Weighted
+# C01      42     4    53     9               5       111.          0         99.4         14.4                     0       0.913  0.824                 0.894             1              0.885                         1     0.866          0.857      0.939
+# C02     196     1     5     8               3       458.          0          0           10.4                     0       0.995  0.961                 0.985             1              0.978                         1     0.978          0.973      0.989
+# C03      27     0     0     7               0        81.7         0          0           28.4                     0       1      0.794                 1                 1              0.742                         1     0.885          0.885      0.852
+# C04      51    41   103    12              51       119.         49.4      197.          57.3                    62.1     0.554  0.810                 0.5               0.707          0.675                         0.657 0.658          0.618      0.690
+# C06      80     0   114   119               0       146.          0        173.         178.                      0       1      0.402                 1                 1              0.450                         1     0.573          0.573      0.621
+# C07      22    10     7    12              10        67.1        19.7        7.03        40.7                    19.7     0.688  0.647                 0.688             0.773          0.622                         0.773 0.667          0.667      0.690
+# Total   418    56   282   167              69       982.         69.1      477.         329.                     69.1     0.858  0.740                 0.844             0.913          0.725                         0.905 0.794          0.788      0.809
+
+

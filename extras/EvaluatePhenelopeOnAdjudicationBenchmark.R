@@ -12,6 +12,12 @@ llmClient <- ellmer::chat_azure_openai(
   credentials = function() keyring::key_get("genai_api_gpt4_key")
 )
 
+llmClient <- Helios::chat_jnj_bedrock(
+  model = "us.anthropic.claude-sonnet-5",
+  api_key = keyring::key_get("genai_bedrock_key"),
+  echo = "none"
+)
+
 # Evaluation function --------------------------------------------------------------------------------------------------
 evaluateAdjudicator <- function(conceptAdjudicator) {
   concepts <- getConceptsForAdjudication()
@@ -36,6 +42,12 @@ evaluateAdjudicator <- function(conceptAdjudicator) {
   }
   adjudications <- bind_rows(adjudications) |>
     mutate(adjudication = if_else(status == "APPROVED", "YES", "NO"))
+  
+  naAdjudications <- sum(is.na(adjudications$status))
+  if (naAdjudications > 0) {
+    warning("Found ", naAdjudications, " adjudications with NA values. Interpreting those as 'NO'.")
+    adjudications$adjudication[is.na(adjudications$status)] <- "NO"
+  }
   delta <- Sys.time() - start
   message("Adjudicating concepts took ", signif(delta, 3), " ", attr(delta, "units"), " and cost $", costTracker$amount, ".")
   
@@ -43,7 +55,13 @@ evaluateAdjudicator <- function(conceptAdjudicator) {
 }
 
 # Using default prompts in refactored Phenelope ---------------------------------------------------------------
-conceptAdjudicator <- DefaultConceptAdjudicator$new(nForQuickScreen = 99999)
+prompt <- paste(readLines("extras/AdjudicationV0.txt"), collapse = "\n")
+systemPrompt <- paste(readLines("extras/AdjudicationSystemV0.txt"), collapse = "\n")
+conceptAdjudicator <- DefaultConceptAdjudicator$new(nForQuickScreen = 1,
+                                                    prompt = prompt,
+                                                    systemPrompt = systemPrompt,
+                                                    quickScreenPrompt = quickScreenPrompt,
+                                                    quickScreenSystemPrompt = quickScreenSystemPrompt)
 evaluateAdjudicator(conceptAdjudicator)
 
 # First run:
@@ -76,7 +94,7 @@ evaluateAdjudicator(conceptAdjudicator)
 # All            212    36  1004    48 0.855       0.815       0.965
 
 # Using V1 prompt ---------------------------------------------------------------------------------------------------
-prompt <- paste(readLines("extras/Adjudication.txt"), collapse = "\n")
+prompt <- paste(readLines("extras/AdjudicationV1.txt"), collapse = "\n")
 systemPrompt <- paste(readLines("extras/AdjudicationSystem.txt"), collapse = "\n")
 conceptAdjudicator <- DefaultConceptAdjudicator$new(nForQuickScreen = 99999,
                                                     prompt = prompt,
@@ -113,11 +131,31 @@ evaluateAdjudicator(conceptAdjudicator)
 # PROCEDURE       73    13   302    12 0.849       0.859       0.959
 # All            212    30  1010    48 0.876       0.815       0.971
 
+# V1 using Claude Sonnet 5:
+# targetDomain    tp    fp    tn    fn   ppv sensitivity specificity
+# CONDITION       91    18   474    17 0.835       0.843       0.963
+# MEASUREMENT     58     9   224     9 0.866       0.866       0.961
+# PROCEDURE       66     4   311    19 0.943       0.776       0.987
+# All            215    31  1009    45 0.874       0.827       0.970
+
+# Adjudicating concepts took 32.7 mins and cost $2.423496.
+# targetDomain    tp    fp    tn    fn   ppv sensitivity specificity
+# CONDITION       90    17   475    18 0.841       0.833       0.965
+# MEASUREMENT     58     7   226     9 0.892       0.866       0.970
+# PROCEDURE       65     4   311    20 0.942       0.765       0.987
+# All            213    28  1012    47 0.884       0.819       0.973
+
 # Using V1 prompt and quick screen ----------------------------------------------------------------------------------
-prompt <- paste(readLines("extras/Adjudication.txt"), collapse = "\n")
+prompt <- paste(readLines("extras/AdjudicationV1.txt"), collapse = "\n")
 systemPrompt <- paste(readLines("extras/AdjudicationSystem.txt"), collapse = "\n")
-quickScreenPrompt <- paste(readLines("extras/QuickScreen.txt"), collapse = "\n")
-quickScreenSystemPrompt <- paste(readLines("extras/QuickScreenSystem.txt"), collapse = "\n")
+quickScreenPrompt <- paste(readLines("extras/QuickScreenV0.txt"), collapse = "\n")
+quickScreenSystemPrompt <- paste(readLines("extras/QuickScreenSystemV0.txt"), collapse = "\n")
+conceptAdjudicator <- DefaultConceptAdjudicator$new(nForQuickScreen = 1,
+                                                    prompt = prompt,
+                                                    systemPrompt = systemPrompt,
+                                                    quickScreenPrompt = quickScreenPrompt,
+                                                    quickScreenSystemPrompt = quickScreenSystemPrompt)
+
 conceptAdjudicator <- DefaultConceptAdjudicator$new(nForQuickScreen = 1,
                                                     prompt = prompt,
                                                     systemPrompt = systemPrompt,
@@ -157,8 +195,16 @@ evaluateAdjudicator(conceptAdjudicator)
 # PROCEDURE       68    12   303    17 0.85        0.8         0.962
 # All            210    33  1007    50 0.864       0.808       0.968
 
+# Third run
+# Adjudicating concepts took 20.4 mins and cost $1.564554.
+# targetDomain    tp    fp    tn    fn   ppv sensitivity specificity
+# CONDITION       90    16   476    18 0.849       0.833       0.967
+# MEASUREMENT     54     8   225    13 0.871       0.806       0.966
+# PROCEDURE       71     6   309    14 0.922       0.835       0.981
+# All            215    30  1010    45 0.878       0.827       0.971
+
 # Using V1 prompt and quick screen V2 -------------------------------------------------------------------------------
-prompt <- paste(readLines("extras/Adjudication.txt"), collapse = "\n")
+prompt <- paste(readLines("extras/AdjudicationV1.txt"), collapse = "\n")
 systemPrompt <- paste(readLines("extras/AdjudicationSystem.txt"), collapse = "\n")
 quickScreenPrompt <- paste(readLines("extras/QuickScreenV2.txt"), collapse = "\n")
 quickScreenSystemPrompt <- paste(readLines("extras/QuickScreenSystem.txt"), collapse = "\n")

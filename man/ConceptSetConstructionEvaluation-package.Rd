@@ -6,7 +6,7 @@
 \alias{ConceptSetConstructionEvaluation-package}
 \title{ConceptSetConstructionEvaluation: Evaluating Concept Set Contructors}
 \description{
-Evaluating concept set contructors using the gold standard established during the first MindsMeetMachines challenge.
+Evaluating concept set contructors using various gold standards.
 }
 \seealso{
 Useful links:
@@ -24,6 +24,7 @@ Authors:
 \itemize{
   \item Martijn Schuemie \email{schuemie@ohdsi.org}
   \item Azza Shoaibi
+  \item Patrick Ryan
 }
 
 }
